@@ -37,10 +37,10 @@ jobs:
           mkdir -p image
 
           # ✅ 方法1：使用 find + 正确正则
-          image_count=$(find image -type f -iregex '.*\.$jpg\|jpeg\|png\|gif$' | wc -l)
+          #image_count=$(find image -type f -iregex '.*\.$jpg\|jpeg\|png\|gif$' | wc -l)
 
           # ✅ 或者方法2：使用 glob 扩展（推荐，简单可靠）
-          # image_count=$(echo image/*.{jpg,jpeg,png,gif} | tr ' ' '\n' | grep -v 'image/\*' | wc -l)
+           image_count=$(echo image/*.{jpg,jpeg,png,gif} | tr ' ' '\n' | grep -v 'image/\*' | wc -l)
 
           if [ $image_count -eq 0 ]; then
             echo "Error: 未在 image 目录找到任何有效图片"
