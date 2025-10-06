@@ -1,6 +1,7 @@
 import tweepy
 import os
 import time
+import random  # 添加导入 random 模块
 
 # --------------------------
 # 1. 从环境变量读取Twitter API密钥
